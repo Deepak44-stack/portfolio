@@ -33,6 +33,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: "#0c100d",
+              lime: "#d6f36b",
+              coral: "#ff8061",
+              paper: "#f3f1e8",
+            },
+            fontFamily: {
+              display: ["Space Grotesk", "sans-serif"],
+              mono: ["DM Mono", "monospace"],
+            },
+          },
+        },
+      };
+    </script>
     <link rel="stylesheet" href="style.css" />
     <style>
       .student-note { display: grid; grid-template-columns: 34px 1fr; column-gap: 12px; max-width: 390px; margin-top: 28px; padding: 12px 14px; border-left: 2px solid #8ed8ff; background: rgba(142, 216, 255, 0.06); }
@@ -69,7 +88,7 @@
       nav { width: min(980px, 92%); margin: 20px auto 0; padding: 0 16px; min-height: 62px; border-radius: 30px; background: rgba(17, 24, 41, .86); border: 1px solid rgba(116, 137, 181, .08); box-shadow: 0 14px 38px rgba(0, 0, 0, .16); }
       nav .brand { margin-right: auto; } nav ul { gap: 6px; } nav ul a { display: block; padding: 12px 17px; border: 1px solid transparent; border-radius: 24px; color: #f3f1ff; font-weight: 600; font-size: 16px; } nav ul a:hover, nav ul a.is-current { color: #d9b8ff; border-color: #c792ff; background: rgba(155, 69, 255, .08); }
       .brand-mark { border-color: #b97cff; } .brand-mark::after { background: #ff72c8; } .brand-mark b:first-child { color: #c792ff; } .brand-name span { color: #ff72c8; }
-      .header-text { width: min(650px, 54%); margin: clamp(105px, 17vh, 165px) 0 0 max(7%, calc((100% - 1180px) / 2)); z-index: 2; } .header-text p { color: #c1c7d8; } .header-text .eyebrow { color: #d0a7ff !important; } .header-text .eyebrow span { background: #a94dff; box-shadow: 0 0 0 5px rgba(169, 77, 255, .17); }
+      .header-text { width: min(650px, 54%); margin: clamp(105px, 17vh, 165px) 0 0 max(7%, calc((100% - 1180px) / 2)); z-index: 2; } .header-text p { color: #c1c7d8; } .header-text .eyebrow { color: #d6f36b !important; } .header-text .eyebrow span { background: #d6f36b; box-shadow: 0 0 0 5px rgba(214, 243, 107, .17); }
       .hero-role { color: #b6bdce !important; font-size: 18px !important; margin-top: 8px; } .header-text h1 { font-size: clamp(46px, 6vw, 78px); line-height: 1.05; letter-spacing: -.055em; margin: 16px 0 20px; } .header-text h1 span { color: #fff; } .intro-summary { color: #d0d4e0 !important; max-width: 600px; font-size: 18px !important; }
       .student-note { display: none; } .hero-socials { display: flex; gap: 16px; margin-top: 28px; } .hero-socials a { display: grid; place-items: center; width: 50px; height: 50px; border: 1px solid rgba(150, 167, 205, .2); border-radius: 50%; background: rgba(24, 34, 55, .75); color: #f4f3ff; font-size: 23px; transition: .25s; } .hero-socials a:hover { color: #d2a6ff; border-color: #a94dff; transform: translateY(-4px); }
       .hero-actions { margin-top: 40px; } .hero-actions .btn { background: #9638ef; border-color: #9638ef; color: #fff; border-radius: 11px; padding: 15px 26px; box-shadow: 0 10px 26px rgba(150, 56, 239, .22); } .hero-actions .btn:hover { background: #b465ff; border-color: #b465ff; } .cv-button { display: inline-flex; align-items: center; gap: 10px; padding: 15px 25px; border: 1px solid rgba(125, 151, 199, .25); border-radius: 11px; background: rgba(21, 32, 52, .8); color: #f4f3ff; text-decoration: none; font-weight: 600; } .cv-button:hover { border-color: #9b45ff; color: #d4b0ff; }
@@ -101,7 +120,7 @@
           <ul>
             <li><a href="#header">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#services">Skills</a></li>
+            <li><a href="#toolkit">Skills</a></li>
             <li><a href="#journey">Experience</a></li>
             <li><a href="#portfolio">Project</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -125,6 +144,20 @@
           <div class="hero-actions">
             <a class="btn" href="#contact">Contact Me <i class="fa-solid fa-arrow-right"></i></a>
             <a class="cv-button" href="images/my-cv.pdf" download>Download CV <i class="fa-solid fa-download"></i></a>
+          </div>
+          <div class="hero-stats mt-8 grid max-w-xl grid-cols-3 gap-2 sm:gap-4" aria-label="Portfolio highlights">
+            <div class="hero-stat rounded-xl border border-white/10 bg-white/[.04] px-3 py-3 backdrop-blur-sm sm:px-4">
+              <strong class="block text-lg text-lime sm:text-xl">06</strong>
+              <span class="font-mono text-[10px] uppercase tracking-[.12em] text-white/55">Core skills</span>
+            </div>
+            <div class="hero-stat rounded-xl border border-white/10 bg-white/[.04] px-3 py-3 backdrop-blur-sm sm:px-4">
+              <strong class="block text-lg text-lime sm:text-xl">03</strong>
+              <span class="font-mono text-[10px] uppercase tracking-[.12em] text-white/55">Featured works</span>
+            </div>
+            <div class="hero-stat rounded-xl border border-white/10 bg-white/[.04] px-3 py-3 backdrop-blur-sm sm:px-4">
+              <strong class="block text-lg text-lime sm:text-xl">2026</strong>
+              <span class="font-mono text-[10px] uppercase tracking-[.12em] text-white/55">Building now</span>
+            </div>
           </div>
           <div class="hero-meta"><span>Based in Nepal</span><span>Scroll to explore <i class="fa-solid fa-arrow-down"></i></span></div>
         </div>
@@ -302,6 +335,27 @@
               <a href="#contact">Discuss this service</a>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section class="skills-showcase reveal" id="toolkit">
+        <div class="container">
+          <div class="skills-heading">
+            <div>
+              <p class="eyebrow"><span></span> My toolkit</p>
+              <h1 class="sub-title">Skills I’m growing<br /><em>through practice.</em></h1>
+            </div>
+            <p class="section-lead">A practical mix of design, frontend, and workflow skills I use to turn an idea into a clear, responsive experience.</p>
+          </div>
+          <div class="skill-grid">
+            <article class="skill-card group"><div class="skill-icon transition-transform duration-300 group-hover:rotate-6"><i class="fa-brands fa-html5"></i></div><div><h2>HTML & CSS</h2><p>Semantic layouts, responsive styling, and accessible interfaces.</p></div><span class="skill-level">Strong foundation</span></article>
+            <article class="skill-card group"><div class="skill-icon transition-transform duration-300 group-hover:rotate-6"><i class="fa-brands fa-js"></i></div><div><h2>JavaScript</h2><p>Interactive components, DOM logic, and smooth browser experiences.</p></div><span class="skill-level">Growing daily</span></article>
+            <article class="skill-card group"><div class="skill-icon transition-transform duration-300 group-hover:rotate-6"><i class="fa-solid fa-pen-ruler"></i></div><div><h2>UI / UX Design</h2><p>Wireframes, visual hierarchy, and decisions that keep screens easy to use.</p></div><span class="skill-level">Project ready</span></article>
+            <article class="skill-card group"><div class="skill-icon transition-transform duration-300 group-hover:rotate-6"><i class="fa-solid fa-mobile-screen-button"></i></div><div><h2>Responsive Design</h2><p>Layouts that feel intentional across phones, tablets, and desktops.</p></div><span class="skill-level">Project ready</span></article>
+            <article class="skill-card group"><div class="skill-icon transition-transform duration-300 group-hover:rotate-6"><i class="fa-brands fa-github"></i></div><div><h2>Git & GitHub</h2><p>Organised repositories, version control, and shareable project work.</p></div><span class="skill-level">Comfortable</span></article>
+            <article class="skill-card group"><div class="skill-icon transition-transform duration-300 group-hover:rotate-6"><i class="fa-solid fa-screwdriver-wrench"></i></div><div><h2>Tools & workflow</h2><p>VS Code, Figma, browser tools, and a detail-first build process.</p></div><span class="skill-level">Everyday tools</span></article>
+          </div>
+          <div class="skill-footnote"><span class="pulse-dot"></span> Currently learning: advanced JavaScript patterns and stronger UX decisions.</div>
         </div>
       </section>
 
